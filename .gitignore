@@ -1,0 +1,5 @@
+# Ignoring Mac Specifc Files
+.DS_Store
+
+# Ignore the config.js file.
+config.js
