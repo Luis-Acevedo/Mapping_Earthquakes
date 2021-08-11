@@ -103,7 +103,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         onEachFeature: function (feature, layer) {
             layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
         }
-    })
+    });
     // Create a legend control object
     let legend = L.control({
         position: 'bottomright'
@@ -111,7 +111,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     // Then add all the details for the legend
     legend.onAdd = function () {  
 
-        let div = L.DomUtil.create('div', 'info legend'), ;
+        let div = L.DomUtil.create('div', 'info legend');
         const magnitudes = [0, 1, 2, 3, 4, 5];
         const colors = [
             "#98ee00",
