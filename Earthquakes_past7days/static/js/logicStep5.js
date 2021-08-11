@@ -103,15 +103,19 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         onEachFeature: function (feature, layer) {
             layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
         }
-    });
-    // Create a legend control object
-    let legend = L.control({
-        position: 'bottomright'
-    });
-    // Then add all the details for the legend
-    legend.onAdd = function () {  
+    }).addTo(earthquakes);
 
-        let div = L.DomUtil.create('div', 'info legend');
+    // Add to map
+    earthquakes.addTo(map);
+
+    // Create a legend control object.
+    let legend = L.control({
+        position: "bottomright"
+    });
+
+    // Then add all the details for the legend.
+    legend.onAdd = function () {
+        let div = L.DomUtil.create("div", "info legend");
         const magnitudes = [0, 1, 2, 3, 4, 5];
         const colors = [
             "#98ee00",
@@ -132,4 +136,5 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     };
 
     legend.addTo(map);
+
 });

@@ -105,5 +105,6 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         }
     }).addTo(earthquakes);
 
-      earthquakes.addTo(map)
+    // Add to map
+    earthquakes.addTo(map);
 });
